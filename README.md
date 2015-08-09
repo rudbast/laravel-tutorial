@@ -129,7 +129,10 @@ Created model will be extended from a default `Model.php` class, which includes 
     });
     ```
 
-    Hook them up using `$article->tags()->attach({otherModelId})` and vice versa `$tag->articles()->attach({otherModelId})`
+    Hook them up using
+    `$article->tags()->attach({otherModelId})`
+    and vice versa
+    `$tag->articles()->attach({otherModelId})`
 
 ## DEBUG mode
 
@@ -150,6 +153,7 @@ composer require illuminate/html
 Tag open `{!! Form::open() !!}`, tag close `{!! Form::close() !!}`, CSRF tag added automatically using this tag.
 
 Add code below into ```config\app.php``` file
+
 1.  in `providers`
     ```PHP
     Illuminate\Html\HtmlServiceProvider::class,
@@ -216,6 +220,7 @@ Add code below into ```config\app.php``` file
     ```
 
 ## Service Provider
+
 [Related docs](http://laravel.com/docs/5.1/container)
 
 1.  Create new service provider
