@@ -1,6 +1,7 @@
 # NOTES
 
 Important commands related to Laravel 5 Tutorials, specifically 5.1
+[Related docs](http://laravel.com/docs/5.1)
 
 ## Tinker
 
