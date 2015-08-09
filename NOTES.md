@@ -1,5 +1,4 @@
 # NOTES
----
 Important commands related to Laravel 5 Tutorials, specifically 5.1
 
 ## Tinker
@@ -7,7 +6,7 @@ Tinkering around with PHP
 ```BASH
 php artisan tinker
 ```
----
+
 ## Database
 Related settings in `.env` file
 
@@ -112,13 +111,13 @@ Created model will be extended from a default `Model.php` class, which includes 
     });
     ```
     Hook them up using `$article->tags()->attach({otherModelId})` and vice versa `$tag->articles()->attach({otherModelId})`
----
+
 ## DEBUG mode
 Disable debug mode when in production. Change code below in `.env`
 ```BASH
 APP_DEBUG=false
 ```
----
+
 ## FORM
 Use [Illuminate/Html](https://github.com/illuminate/html) package using Composer
 ```BASH
@@ -158,16 +157,16 @@ Add code below into ```config\app.php``` file
     ```PHP
     $this->validate($request, ['title' => 'required'])
     ```
----
+
 ## Authentication
 [Related docs](http://laravel.com/docs/5.1/authentication)
----
+
 ## Middleware
 1.  Add middleware
     ```BASH
     php artisan make:middleware RedirectIfNotAManager
     ```
----
+
 ## Route Model Binding
 1.  Change code in `RouteServiceProvider.php`
     ```PHP
@@ -185,7 +184,7 @@ Add code below into ```config\app.php``` file
         return \App\Article::published()->findOrFail($id);
     });
     ```
----
+
 ## Service Provider
 [Related docs](http://laravel.com/docs/5.1/container)
 1.  Create new service provider
