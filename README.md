@@ -52,6 +52,7 @@ Created model will be extended from a default `Model.php` class, which includes 
         ```PHP
         $article = new App\Article;
         ```
+
     *  Pre-added values
         ```PHP
         $article = App\Article::create(['title' => 'New Article', 'body' = > 'New body']);
