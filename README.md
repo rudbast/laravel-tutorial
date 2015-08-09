@@ -84,7 +84,7 @@ Created model will be extended from a default `Model.php` class, which includes 
     $article = App\Article::find(2);
     ```
 
-7.  Using scope to automatically set things by laravel. Define function in the following format ```set{AttributeName}Attribute({$data})```. With the code body below
+7.  Using scope to automatically set things by laravel. Define function in the following format `set{AttributeName}Attribute({$data})`. With the code body below
     ```PHP
     $this->attributes['password'] = mcrypt($password);
     ```
@@ -130,9 +130,14 @@ Created model will be extended from a default `Model.php` class, which includes 
     ```
 
     Hook them up using
-    `$article->tags()->attach({otherModelId})`
+    ```PHP
+    $article->tags()->attach({otherModelId})
+    ```
+
     and vice versa
-    `$tag->articles()->attach({otherModelId})`
+    ```PHP
+    $tag->articles()->attach({otherModelId})
+    ```
 
 ## DEBUG mode
 
@@ -155,11 +160,13 @@ Tag open `{!! Form::open() !!}`, tag close `{!! Form::close() !!}`, CSRF tag add
 Add code below into ```config\app.php``` file
 
 1.  in `providers`
+
     ```PHP
     Illuminate\Html\HtmlServiceProvider::class,
     ```
 
 2.  in `aliases`
+
     ```PHP
     'Form'      => Illuminate\Html\FormFacade::class,
     'Html'      => Illuminate\Html\HtmlFacade::class,
