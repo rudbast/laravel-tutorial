@@ -141,14 +141,14 @@ Created model will be extended from a default `Model.php` class, which includes 
     $tag->articles()->attach({otherModelId})
     ```
 
-## DEBUG mode
+## DEBUG Mode
 
 Disable debug mode when in production. Change code below in `.env`
 ```BASH
 APP_DEBUG=false
 ```
 
-## FORM
+## Form
 
 Use [Illuminate/Html](https://github.com/illuminate/html) package using Composer
 ```BASH
