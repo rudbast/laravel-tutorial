@@ -41,10 +41,12 @@ Created model will be extended from a default `Model.php` class, which includes 
     ```BASH
     php artisan make:model Article
     ```
+
 2.  Plugin for timestamps
     ```PHP
     Carbon\Carbon::now();
     ```
+
 3.  Creating `model`
     *  Basic
         ```PHP
@@ -59,32 +61,39 @@ Created model will be extended from a default `Model.php` class, which includes 
     ```PHP
     protected $fillable = ['title', 'body'];
     ```
-4.  Saving `model`
 
+4.  Saving `model`
     ```PHP
     $article->save();
     ```
+
 5.  Updating `model`
     ```PHP
     $article->update(['body' => 'Updated']);
     ```
+
 6.  Find a `model` using `id`
     ```PHP
     $article = App\Article::find(2);
     ```
+
 7.  Using scope to automatically set things by laravel. Define function in the following format ```set{AttributeName}Attribute({$data})```. With the code body below
     ```PHP
     $this->attributes['password'] = mcrypt($password);
     ```
+
 8.  Define relationship in model class, with a proper function name and a code body below
     ```PHP
     return $this->hasMany('App\Article');
     ```
+
 9.  Using relationship for `User` to save an `Article` of it's own.
     ```PHP
     \Auth::user()->articles()->save($article);
     ```
+
     Usually would need to get the `User`'s id, but since it's already defined in the relationship, process would be automated
+
 10. Many to many relationship between `Article` and `Tag`
     Use `belongsToMany` as the relationship type in the current `Model`
     ```PHP
@@ -93,6 +102,7 @@ Created model will be extended from a default `Model.php` class, which includes 
         return $this->belongsToMany('App\{otherModel}');
     }
     ```
+
     Add code below into created migration file
     ```PHP
     /**
@@ -111,6 +121,7 @@ Created model will be extended from a default `Model.php` class, which includes 
               ->onDelete('cascade');
     });
     ```
+
     Hook them up using `$article->tags()->attach({otherModelId})` and vice versa `$tag->articles()->attach({otherModelId})`
 
 ## DEBUG mode
@@ -134,11 +145,13 @@ Add code below into ```config\app.php``` file
     ```PHP
     Illuminate\Html\HtmlServiceProvider::class,
     ```
+
 2.  in `aliases`
     ```PHP
     'Form'      => Illuminate\Html\FormFacade::class,
     'Html'      => Illuminate\Html\HtmlFacade::class,
     ```
+
     Illuminate handles all form securities, **NO** SQL injection.
 
 ### Validation
@@ -146,6 +159,7 @@ Add code below into ```config\app.php``` file
     ```PHP
     php artisan make:request ArticleRequest
     ```
+
 2.  Insert code below into the `rules()` function
     ```PHP
     return [
@@ -173,12 +187,14 @@ Add code below into ```config\app.php``` file
     ```PHP
     $router->model('articles', 'App\Article');
     ```
+
 2.  Remove any `$id` as parameter from function in `ArticlesController.php`, change into
     ```PHP
     public function show(Article $article) {
         // remove the code in body : $article = Article::findOrFail($id);
     }
     ```
+
 3.  For complicated logic, change default in number 1 into
     ```PHP
     $router->bind('articles', function($id) {
@@ -192,10 +208,12 @@ Add code below into ```config\app.php``` file
     ```PHP
     php artisan make:provider ViewComposerServiceProvider
     ```
+
 2.  Add the new provider into `config/app.php` file in the `providers`
     ```PHP
     App\Providers\ViewComposerServiceProvider::class,
     ```
+
 3.  Insert related code
     ```PHP
     view()->composer('partials.nav', function($view) {
