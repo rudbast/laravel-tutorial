@@ -46,11 +46,11 @@ Created model will be extended from a default `Model.php` class, which includes 
     Carbon\Carbon::now();
     ```
 3.  Creating model
-    a.  Basic
+    *  Basic
         ```PHP
         $article = new App\Article;
         ```
-    b.  Pre-added values
+    *  Pre-added values
         ```PHP
         $article = App\Article::create(['title' => 'New Article', 'body' = > 'New body']);
         ```
