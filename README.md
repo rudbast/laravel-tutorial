@@ -130,11 +130,13 @@ Created model will be extended from a default `Model.php` class, which includes 
     ```
 
     Hook them up using
+
     ```PHP
     $article->tags()->attach({otherModelId})
     ```
 
     and vice versa
+
     ```PHP
     $tag->articles()->attach({otherModelId})
     ```
