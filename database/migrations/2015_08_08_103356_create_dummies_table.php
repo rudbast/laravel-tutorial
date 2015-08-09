@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateDummiesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('dummies', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('article_id');
+            $table->timestamps();
+        });
+
+        Schema::table('dummies', function (Blueprint $table) {
+            $table->foreign('article_id')
+                  ->references('id')->on('articles');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('dummies');
+    }
+}
