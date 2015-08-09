@@ -174,7 +174,7 @@ class ArticlesController extends Controller
      * @param  ArticleRequset $request
      * @return mixed
      */
-    public function createArticle(ArticleRequset $request)
+    public function createArticle(ArticleRequest $request)
     {
         $article = Auth::user()->articles()->create($request->all());
 

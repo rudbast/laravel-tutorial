@@ -8,7 +8,7 @@
 
     <div class="form-group">
         Name
-        <input class="form-control" type="text" name="name" value="{{ old('name') }}">
+        <input class="form-control" type="text" name="username" value="{{ old('username') }}">
     </div>
 
     <div class="form-group">

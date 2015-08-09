@@ -24,7 +24,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['username', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -46,15 +46,5 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function isATeamManager()
     {
         return true;
-    }
-
-    /**
-     * Scope function, automatically hash password
-     *
-     * @param $password
-     */
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = mcrypt($password);
     }
 }

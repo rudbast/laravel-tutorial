@@ -1,7 +1,9 @@
 @extends('app')
 
 @section('content')
-    <h1>Articles</h1>
+    <h1>
+        Articles
+    </h1>
     <hr />
 
     @foreach ($articles as $article)

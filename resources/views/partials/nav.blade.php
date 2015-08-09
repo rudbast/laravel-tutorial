@@ -24,12 +24,31 @@
                 {{ $id = App\Article::latest()->published()->first()->id }}
 
                 <li>{!! link_to_action('ArticlesController@show', $title, [$id]) !!}</li>
-                <li>
-                    @if (Auth::check())
-                        <a href="/auth/logout">Logout</a>
-                    @else
-                        <a href="/auth/login">Login</a>
-                    @endif
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        @if (Auth::check())
+                            {{ Auth::user()->username }}
+                        @else
+                            Guest
+                        @endif
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @if (Auth::check())
+                                <a href="{{ url('/articles/create') }}">Create Article</a>
+                            @endif
+                        </li>
+
+                        @if (Auth::check())
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/auth/logout">Logout</a></li>
+                        @else
+                            <li><a href="/auth/login">Login</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/auth/register">Register</a></li>
+                        @endif
+                    </ul>
                 </li>
             </ul>
         </div><!-- .navbar-collapse -->
