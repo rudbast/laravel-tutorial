@@ -45,7 +45,7 @@ Created model will be extended from a default `Model.php` class, which includes 
     ```PHP
     Carbon\Carbon::now();
     ```
-3.  Creating model
+3.  Creating `model`
     *  Basic
         ```PHP
         $article = new App\Article;
@@ -60,6 +60,7 @@ Created model will be extended from a default `Model.php` class, which includes 
     protected $fillable = ['title', 'body'];
     ```
 4.  Saving `model`
+
     ```PHP
     $article->save();
     ```
