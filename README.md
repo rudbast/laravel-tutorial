@@ -203,6 +203,7 @@ Add code below into ```config\app.php``` file
 ## Middleware
 
 1.  Add middleware
+
     ```BASH
     php artisan make:middleware RedirectIfNotAManager
     ```
