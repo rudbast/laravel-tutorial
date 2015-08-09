@@ -56,6 +56,7 @@ Created model will be extended from a default `Model.php` class, which includes 
         ```PHP
         $article = App\Article::create(['title' => 'New Article', 'body' = > 'New body']);
         ```
+
     **Remember**
     Add fillable property inside related model class to avoid `MassAssignment` exception and security breaches. In this case, inside the `App/Article.php` file
     ```PHP
