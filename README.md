@@ -38,7 +38,6 @@ Created model will be extended from a default `Model.php` class, which includes 
 [Related docs](http://laravel.com/docs/5.1/eloquent)
 
 1.  Create a `model`
-
     ```BASH
     php artisan make:model Article
     ```
