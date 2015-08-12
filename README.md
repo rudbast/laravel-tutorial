@@ -3,6 +3,10 @@
 Important commands related to Laravel 5 Tutorials, specifically 5.1
 [Related docs](http://laravel.com/docs/5.1)
 
+## Standardization
+[Coding style guide: PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
+[Autoloader: PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md)
+
 ## Tinker
 
 Tinkering around with PHP
