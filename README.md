@@ -54,7 +54,7 @@ Related settings in `.env` file
 Created model will be extended from a default `Model.php` class, which includes a bunch of default methods, review when necessary.
 [Related docs](http://laravel.com/docs/5.1/eloquent)
 
-1.  Create a `model`
+1.  Create a `Model` boilerplate class
 
     ```BASH
     php artisan make:model Article
@@ -66,7 +66,7 @@ Created model will be extended from a default `Model.php` class, which includes 
     Carbon\Carbon::now();
     ```
 
-3.  Creating `model`
+3.  Creating `Model`
 
     *  Basic
 
@@ -81,25 +81,25 @@ Created model will be extended from a default `Model.php` class, which includes 
         ```
 
     **Remember**
-    Add fillable property inside related model class to avoid `MassAssignment` exception and security breaches. In this case, inside the `App/Article.php` file
+    Add fillable property inside related model class to avoid `MassAssignment Exception` and security breaches. In this case, inside the `App/Article.php` file
 
     ```PHP
     protected $fillable = ['title', 'body'];
     ```
 
-4.  Saving `model`
+4.  Saving `Model`
 
     ```PHP
     $article->save();
     ```
 
-5.  Updating `model`
+5.  Updating `Model`
 
     ```PHP
     $article->update(['body' => 'Updated']);
     ```
 
-6.  Find a `model` using `id`
+6.  Find a `Model` using `id`
 
     ```PHP
     $article = App\Article::find(2);
